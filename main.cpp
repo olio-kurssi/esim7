@@ -7,30 +7,25 @@ using namespace std;
 
 int main()
 {
-    Student *objectStudent = new Student;
+    Student *studentList = new Student[5];
+    Student *objectStudent;
 
-    objectStudent->setName("Teppo Opiskelija");
-    objectStudent->setBirthYear(2001);
-    objectStudent->setGroupName("tvt23spl");
-    cout<<"Opiskelijan tiedot"<<endl;
-        cout<<objectStudent->getName()<<endl;
-        cout<<objectStudent->getBirthYear()<<endl;
-        cout<<objectStudent->getGroupName()<<endl;
-        cout<<"*****************************\n";
+    objectStudent=new Student("Teppo Testi",1999,"TVT23SPL");
+    studentList[0]=*objectStudent;
+    objectStudent=new Student("Liisa Joki",1998,"TVT23SPL");
+    studentList[1]=*objectStudent;
+    objectStudent=new Student("Aino Virta",1997,"TVT23SPO");
+    studentList[2]=*objectStudent;
+    objectStudent=new Student("Matti Virtanen",2001,"TVT23SPO");
+    studentList[3]=*objectStudent;
+    objectStudent=new Student("Mikko Vilkas",2001,"TVT23SPL");
+    studentList[4]=*objectStudent;
 
-    Teacher *objectTeacher = new Teacher;
-    objectTeacher->setName("Liisa Opettaja");
-    objectTeacher->setBirthYear(1978);
-    objectTeacher->setDepartment("Tietotekniikka");
-    cout<<"Opettajan tiedot"<<endl;
-        cout<<objectTeacher->getName()<<endl;
-        cout<<objectTeacher->getBirthYear()<<endl;
-        cout<<objectTeacher->getDepartment()<<endl;
-        cout<<"*****************************\n";
-
+    for(int x=0; x<=4; x++){
+        studentList[x].printStudentData();
+    }
+    delete[] studentList;
     delete objectStudent;
-        objectStudent=nullptr;
-    delete objectTeacher;
-        objectTeacher=nullptr;
+    objectStudent=nullptr;
     return 0;
 }
