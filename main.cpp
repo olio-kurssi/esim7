@@ -2,30 +2,28 @@
 #include "teacher.h"
 
 #include <iostream>
+#include <vector>
+
 
 using namespace std;
 
 int main()
 {
-    Student *studentList = new Student[5];
-    Student *objectStudent;
+    vector<Student> studentList;
 
-    objectStudent=new Student("Teppo Testi",1999,"TVT23SPL");
-    studentList[0]=*objectStudent;
-    objectStudent=new Student("Liisa Joki",1998,"TVT23SPL");
-    studentList[1]=*objectStudent;
-    objectStudent=new Student("Aino Virta",1997,"TVT23SPO");
-    studentList[2]=*objectStudent;
-    objectStudent=new Student("Matti Virtanen",2001,"TVT23SPO");
-    studentList[3]=*objectStudent;
-    objectStudent=new Student("Mikko Vilkas",2001,"TVT23SPL");
-    studentList[4]=*objectStudent;
+    Student objectStudent0("Teppo Testi",1999,"TVT23SPL");
+    studentList.push_back(objectStudent0);
+    Student objectStudent1("Liisa Joki",1998,"TVT23SPL");
+    studentList.push_back(objectStudent1);
+    Student objectStudent2("Aino Virta",1997,"TVT23SPO");
+    studentList.push_back(objectStudent2);
+    Student objectStudent3("Matti Virtanen",2001,"TVT23SPO");
+    studentList.push_back(objectStudent3);
+    Student objectStudent4("Mikko Vilkas",2001,"TVT23SPL");
+    studentList.push_back(objectStudent4);
 
     for(int x=0; x<=4; x++){
         studentList[x].printStudentData();
     }
-    delete[] studentList;
-    delete objectStudent;
-    objectStudent=nullptr;
     return 0;
 }
