@@ -11,17 +11,11 @@ int main()
 {
     unique_ptr<vector<Student>> studentList = make_unique<vector<Student>>();
 
-    Student objectStudent0("Teppo Testi",1999,"TVT23SPL");
-    Student objectStudent1("Liisa Joki",1998,"TVT23SPL");
-    Student objectStudent2("Aino Virta",1997,"TVT23SPO");
-    Student objectStudent3("Matti Virtanen",2001,"TVT23SPO");
-    Student objectStudent4("Mikko Vilkas",2001,"TVT23SPL");
-
-    studentList->push_back(objectStudent0);
-    studentList->push_back(objectStudent1);
-    studentList->push_back(objectStudent2);
-    studentList->push_back(objectStudent3);
-    studentList->push_back(objectStudent4);
+    studentList->emplace_back("Teppo Testi", 1999, "TVT23SPL");
+    studentList->emplace_back("Liisa Joki", 1998, "TVT23SPL");
+    studentList->emplace_back("Aino Virta", 1997, "TVT23SPO");
+    studentList->emplace_back("Matti Virtanen", 2001, "TVT23SPO");
+    studentList->emplace_back("Mikko Vilkas", 2001, "TVT23SPL");
 
     // Hae opiskelijalista studentList-osoittimesta
     vector<Student>& students = *studentList;
