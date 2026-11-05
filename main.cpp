@@ -17,12 +17,8 @@ int main()
     studentList->emplace_back("Matti Virtanen", 2001, "TVT23SPO");
     studentList->emplace_back("Mikko Vilkas", 2001, "TVT23SPL");
 
-    // Hae opiskelijalista studentList-osoittimesta
-    vector<Student>& students = *studentList;
-
-    for(int x=0; x<=4; x++){
-        // Käytä opiskelijalistan elementtiä `x` ja kutsu printStudentData() -funktiota
-        students[x].printStudentData();
+    for(Student &student : *studentList){
+        student.printStudentData();
     }
 
     return 0;
